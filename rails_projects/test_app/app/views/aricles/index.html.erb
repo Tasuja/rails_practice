@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Aricles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @aricles.each do |aricle| %>
+      <tr>
+        <td><%= aricle.title %></td>
+        <td><%= aricle.description %></td>
+        <td><%= link_to 'Show', aricle %></td>
+        <td><%= link_to 'Edit', edit_aricle_path(aricle) %></td>
+        <td><%= link_to 'Destroy', aricle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Aricle', new_aricle_path %>
